@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-const Home = (): JSX.Element => {
+const Home = (): React.JSX.Element => {
   return <></>;
 };
 
