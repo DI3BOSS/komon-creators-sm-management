@@ -1,4 +1,3 @@
-import "whatwg-fetch";
 import "@testing-library/jest-dom";
 
 jest.mock("next/dynamic", () => ({

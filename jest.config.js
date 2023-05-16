@@ -13,8 +13,8 @@ const customJestConfig = {
   collectCoverageFrom: [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "!src/layout.tsx",
-    "!src/page.tsx",
+    "!src/app/layout.tsx",
+    "!src/app/page.tsx",
     "!src/globals.css",
     "!jest.setup.ts",
   ],
