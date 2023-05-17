@@ -4,12 +4,14 @@ const Footer = (): React.JSX.Element => {
   return (
     <>
       <footer className="bg-white py-8">
-        <div className="w-full text-center">
+        <div className="flex flex-row justify-center">
           <Image
+            fill={false}
             src="https://storage.googleapis.com/komon-website/logo-komon-gray.svg"
-            className="mx-auto h-6 md:h-10"
             alt="Komon Logo"
             data-testid="komon-footer-logo"
+            width={155}
+            height={40}
           />
         </div>
         <div className="mt-2 w-full text-center">

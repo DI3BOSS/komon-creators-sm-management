@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import Header from "./Header";
-describe("Given the Header component", () => {
+import Footer from "./Footer";
+describe("Given the Footer component", () => {
   describe("When it's rendered for mockup purposes", () => {
-    test("Then it should show the `Komon Logo Navbar`", () => {
-      const imageAltText = "Komon Logo Navbar";
+    test("Then it should show the `Komon Logo`", () => {
+      const imageAltText = "Komon Logo";
 
-      render(<Header />);
+      render(<Footer />);
 
       const expectedAltText = screen.getByAltText(imageAltText);
 
