@@ -1,6 +1,7 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
+import "./SocialMedia.css";
 
 interface SocialMediaProps {
   networkIcon: string;
@@ -28,24 +29,24 @@ const SocialMedia = ({
 
   return (
     <>
-      <article className="flex flex-col justify-center min-w-350 p-20">
-        <div className="flex flex-row space-between">
+      <article className="flex flex-col rounded-md bg-white relative w-[200px]">
+        <div className="flex flex-row justify-between items-center m-5">
           <Image
             src={networkIcon}
             alt="instagram account"
             className=""
-            height={20}
-            width={20}
+            height={15}
+            width={15}
           />
-          <h2 className="">{networkTitle}</h2>
+          <h2 className="ml-2">{networkTitle}</h2>
         </div>
-        <div className="flex flex-row space-between">
+        <div className="flex flex-row justify-between items-center m-5">
           <Image
             src={avatar}
             alt={avatar}
-            className=""
-            height={30}
-            width={30}
+            className="rounded-full"
+            height={50}
+            width={50}
           />
           <span className="">{username}</span>
         </div>
@@ -53,7 +54,7 @@ const SocialMedia = ({
           <>
             {postList}
             <span
-              className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100"
+              className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100 cursor-pointer items-right"
               onClick={handleOpen}
             >
               <svg
@@ -77,7 +78,7 @@ const SocialMedia = ({
           <>
             {postList}
             <span
-              className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100"
+              className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100 cursor-pointer"
               onClick={handleClose}
             >
               <svg
