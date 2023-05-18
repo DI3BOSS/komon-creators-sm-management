@@ -2,13 +2,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import "./SocialMedia.css";
+import { PostListStructure } from "@/data/types";
 
 interface SocialMediaProps {
   networkIcon: string;
   networkTitle: string;
   username: string;
   avatar: string;
-  postList?: React.JSX.Element;
+  postList: PostListStructure | undefined;
 }
 
 const SocialMedia = ({
@@ -29,7 +30,7 @@ const SocialMedia = ({
 
   return (
     <>
-      <article className="flex flex-col rounded-md bg-white relative w-[200px]">
+      <article className="flex flex-col rounded-md bg-white relative w-[200px] card">
         <div className="flex flex-row justify-between items-center m-5">
           <Image
             src={networkIcon}
@@ -52,9 +53,8 @@ const SocialMedia = ({
         </div>
         {!isDetailOpen && (
           <>
-            {postList}
             <span
-              className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100 cursor-pointer items-right"
+              className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100 cursor-pointer items-right m-2"
               onClick={handleOpen}
             >
               <svg
@@ -76,9 +76,24 @@ const SocialMedia = ({
         )}
         {isDetailOpen && (
           <>
-            {postList}
+            <ul>
+              {postList?.map((post) => (
+                <li key={post.image} className="p-5">
+                  <Image
+                    src={post.image}
+                    alt={avatar}
+                    className="rounded-md pb-2"
+                    height={150}
+                    width={150}
+                  />
+                  <div>
+                    <p className="p-2">{post.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
             <span
-              className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100 cursor-pointer"
+              className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100 cursor-pointer m-2"
               onClick={handleClose}
             >
               <svg
