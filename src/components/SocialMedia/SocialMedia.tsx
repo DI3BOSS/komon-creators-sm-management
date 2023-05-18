@@ -9,7 +9,7 @@ interface SocialMediaProps {
   networkTitle: string;
   username: string;
   avatar: string;
-  postList: PostListStructure | undefined;
+  postList: PostListStructure;
 }
 
 const SocialMedia = ({
@@ -53,9 +53,10 @@ const SocialMedia = ({
         </div>
         {!isDetailOpen && (
           <>
-            <span
+            <button
               className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100 cursor-pointer items-right m-2"
               onClick={handleOpen}
+              name="Manage"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +72,7 @@ const SocialMedia = ({
                 ></path>
               </svg>
               Manage
-            </span>
+            </button>
           </>
         )}
         {isDetailOpen && (
@@ -92,9 +93,10 @@ const SocialMedia = ({
                 </li>
               ))}
             </ul>
-            <span
+            <button
               className="inline-flex items-center rounded-md bg-dark-08 px-2 py-[2px] text-dark-100 cursor-pointer m-2"
               onClick={handleClose}
+              name="close"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +112,7 @@ const SocialMedia = ({
                 ></path>
               </svg>
               Close
-            </span>
+            </button>
           </>
         )}
       </article>

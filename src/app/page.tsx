@@ -11,7 +11,7 @@ const Home = (): React.JSX.Element => {
       <Header />
       <main className="p-20">
         <SocialMedia
-          postList={postList}
+          postList={postList!}
           networkIcon={networkIcon}
           networkTitle={networkTitle}
           avatar={avatar}
